@@ -5,14 +5,14 @@ package edu.orangecoastcollege.cs273.balbert.paintestimator;
  */
 
 public class InteriorRoom {
-    private int mDoors;
-    private int mWindows;
     private float mHeight;
     private float mLength;
     private float mWidth;
-    private static final int DOOR_AREA = 21;
-    private static final int WINDOW_AREA = 16;
-    private static final int SQ_FEET_PER_GALLON = 275;
+    private int mDoors;
+    private int mWindows;
+    private static final float DOOR_AREA = 21.0f;
+    private static final float WINDOW_AREA = 16.0f;
+    private static final float SQ_FEET_PER_GALLON = 275.0f;
 
     public InteriorRoom()
     {
@@ -22,10 +22,6 @@ public class InteriorRoom {
         mLength = 0.0f;
         mWidth = 0.0f;
     }
-
-    public int doorAndWindowArea() { return (DOOR_AREA * mDoors) + (WINDOW_AREA * mWindows); }
-
-    public float gallonsOfPaintRequired() { return 0; }
 
     public int getDoors() { return mDoors; }
 
@@ -37,33 +33,21 @@ public class InteriorRoom {
 
     public float getWidth() { return mWidth; }
 
-    public void setDoors(int mDoors) {
-        this.mDoors = mDoors;
-    }
+    public void setDoors(int mDoors) { this.mDoors = mDoors; }
 
-    public void setWindows(int windows) {
-        this.mWindows = windows;
-    }
+    public void setWindows(int windows) { this.mWindows = windows; }
 
-    public void setHeight(float height) {
-        this.mHeight = height;
-    }
+    public void setHeight(float height) { this.mHeight = height; }
 
-    public void setLength(float length) {
-        this.mLength = length;
-    }
+    public void setLength(float length) { this.mLength = length; }
 
-    public void setWidth(float width) {
-        this.mWidth = width;
-    }
+    public void setWidth(float width) { this.mWidth = width; }
 
-    public float totalSurfaceArea()
-    {
-        return 0.0f;
-    }
+    public float doorAndWindowArea() { return ( DOOR_AREA * mDoors ) + ( WINDOW_AREA * mWindows ); }
 
-    public float wallSurfaceArea()
-    {
-        return 0.0f;
-    }
+    public float wallSurfaceArea() { return 2 * mLength * mHeight + 2 * mWidth * mHeight + mLength * mWidth; }
+
+    public float totalSurfaceArea() { return wallSurfaceArea() - doorAndWindowArea(); }
+
+    public float gallonsOfPaintRequired() { return totalSurfaceArea() / SQ_FEET_PER_GALLON; }
 }

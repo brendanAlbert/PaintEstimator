@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="15dp"
         android:text="@string/app_name"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"/>
 
     <TextView
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/paintEstimatorTextView"
-        android:layout_marginTop="20dp"
-        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
         android:text="@string/enter_dimensions" />
 
     <TextView
@@ -36,8 +36,8 @@
         android:layout_below="@+id/enterDimensionsTextView"
         android:layout_alignStart="@+id/enterDimensionsTextView"
         android:layout_alignLeft="@+id/enterDimensionsTextView"
-        android:layout_marginTop="55dp"
-        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
         android:text="@string/length" />
 
     <EditText
@@ -47,8 +47,9 @@
         android:layout_below="@+id/enterDimensionsTextView"
         android:layout_alignEnd="@+id/enterDimensionsTextView"
         android:layout_alignRight="@+id/enterDimensionsTextView"
-        android:layout_marginTop="55dp"
-        android:textSize="22sp"
+        android:layout_alignBaseline="@id/lengthTextView"
+        android:textSize="16sp"
+        android:gravity="center"
         android:ems="8"
         android:inputType="number"/>
 
@@ -59,8 +60,8 @@
         android:layout_below="@+id/lengthTextView"
         android:layout_alignStart="@+id/enterDimensionsTextView"
         android:layout_alignLeft="@+id/enterDimensionsTextView"
-        android:layout_marginTop="55dp"
-        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
         android:text="@string/width" />
 
     <EditText
@@ -70,8 +71,9 @@
         android:layout_below="@+id/lengthEditText"
         android:layout_alignEnd="@+id/enterDimensionsTextView"
         android:layout_alignRight="@+id/enterDimensionsTextView"
-        android:layout_marginTop="25dp"
-        android:textSize="22sp"
+        android:layout_alignBaseline="@id/widthTextView"
+        android:textSize="16sp"
+        android:gravity="center"
         android:ems="8"
         android:inputType="number"/>
 
@@ -82,8 +84,8 @@
         android:layout_below="@+id/widthTextView"
         android:layout_alignStart="@+id/enterDimensionsTextView"
         android:layout_alignLeft="@+id/enterDimensionsTextView"
-        android:layout_marginTop="55dp"
-        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
         android:text="@string/height" />
 
     <EditText
@@ -93,9 +95,10 @@
         android:layout_below="@+id/widthEditText"
         android:layout_alignEnd="@+id/enterDimensionsTextView"
         android:layout_alignRight="@+id/enterDimensionsTextView"
-        android:layout_marginTop="25dp"
-        android:textSize="22sp"
+        android:layout_alignBaseline="@id/heightTextView"
+        android:textSize="16sp"
         android:ems="8"
+        android:gravity="center"
         android:inputType="number"/>
 
     <TextView
@@ -103,9 +106,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/paintEstimatorTextView"
-        android:layout_marginTop="355dp"
-        android:textSize="22sp"
+        android:layout_below="@+id/heightTextView"
+        android:layout_marginTop="30dp"
+        android:textSize="14sp"
         android:text="@string/enter_door_window" />
 
     <TextView
@@ -115,8 +118,8 @@
         android:layout_below="@+id/howManyDoorsWindowsTextView"
         android:layout_alignStart="@+id/enterDimensionsTextView"
         android:layout_alignLeft="@+id/enterDimensionsTextView"
-        android:layout_marginTop="55dp"
-        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
         android:text="@string/doors" />
 
     <EditText
@@ -126,8 +129,9 @@
         android:layout_below="@+id/howManyDoorsWindowsTextView"
         android:layout_alignEnd="@+id/enterDimensionsTextView"
         android:layout_alignRight="@+id/enterDimensionsTextView"
-        android:layout_marginTop="30dp"
-        android:textSize="22sp"
+        android:layout_alignBaseline="@id/doorsTextView"
+        android:textSize="16sp"
+        android:gravity="center"
         android:ems="8"
         android:inputType="number"/>
 
@@ -138,8 +142,8 @@
         android:layout_below="@+id/doorsTextView"
         android:layout_alignStart="@+id/enterDimensionsTextView"
         android:layout_alignLeft="@+id/enterDimensionsTextView"
-        android:layout_marginTop="55dp"
-        android:textSize="22sp"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
         android:text="@string/windows" />
 
     <EditText
@@ -149,8 +153,9 @@
         android:layout_below="@+id/doorsEditText"
         android:layout_alignEnd="@+id/enterDimensionsTextView"
         android:layout_alignRight="@+id/enterDimensionsTextView"
-        android:layout_marginTop="40dp"
-        android:textSize="22sp"
+        android:layout_alignBaseline="@id/windowsTextView"
+        android:textSize="16sp"
+        android:gravity="center"
         android:ems="8"
         android:inputType="number"/>
 
@@ -161,10 +166,12 @@
         android:layout_below="@id/windowsTextView"
         android:layout_alignStart="@id/windowsTextView"
         android:layout_alignLeft="@id/windowsTextView"
-        android:padding="20dp"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:text="@string/compute_button_text"/>
+        android:padding="8dp"
+        android:textSize="14sp"
+        android:layout_marginTop="30dp"
+        android:text="@string/compute_button_text"
+        android:elevation="4dp"
+        android:onClick="computeGallons" />
 
     <Button
         android:id="@+id/helpButton"
@@ -173,19 +180,21 @@
         android:layout_below="@id/windowsTextView"
         android:layout_alignEnd="@id/windowsEditText"
         android:layout_alignRight="@id/windowsEditText"
-        android:padding="20dp"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:text="@string/help_button_text"/>
+        android:padding="8dp"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@id/computeGallonsButton"
+        android:text="@string/help_button_text"
+        android:elevation="4dp"
+        android:onClick="goToHelp" />
 
     <TextView
         android:id="@+id/gallonsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/howManyDoorsWindowsTextView"
-        android:layout_marginTop="300dp"
-        android:textSize="22sp"
+        android:layout_below="@+id/computeGallonsButton"
+        android:layout_marginTop="70dp"
+        android:textSize="20sp"
         android:text="@string/gallons" />
 
 

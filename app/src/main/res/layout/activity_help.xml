@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paintbackground"
     tools:context="edu.orangecoastcollege.cs273.balbert.paintestimator.HelpActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/estimatedPaintRequiredTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:text="@string/gallons"/>
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/estimatedPaintRequiredTextView"
+        android:layout_centerHorizontal="true"
+        android:onClick="returnToInputRoomDimensions"
+        android:text="@string/return_btn"/>
+
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/returnButton"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginRight="85dp"
+        android:padding="10dp"
+        android:textSize="13sp"
+        android:text="@string/help_text"/>
+</RelativeLayout>

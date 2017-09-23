@@ -15,11 +15,13 @@
     <string name="compute_button_text">Compute Gallons</string>
     <string name="help_button_text">Help</string>
 
-    <string name="gallons">Gallons</string>
-    <string name="return_btn">Input Room Dimensions</string>
-
     <string name="interior_surface_area_text">Interior surface area:</string>
     <string name="gallons_needed_text">Gallons needed:</string>
+
+    <!-- The string elements below are for 'activity_help.xml' -->
+
+    <string name="gallons">Estimated Paint Required:</string>
+    <string name="return_btn">Input Room Dimensions</string>
 
     <!-- HELP TEXT -->
     <string name="help_text">

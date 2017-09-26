@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -118,7 +119,10 @@ public class MainActivity extends AppCompatActivity {
      * @param view is the View that called this method.
      *             In this case, it is the Compute Gallons button.
      *
-     *             Data from the View is collected, passed to the Model, computed,
+     *             Data from the View is collected and checked to be sure a value
+     *             was entered. If not, the try-catch will assign a 0 or 0.0f.
+     *             The data, which is now guaranteed to not be null,
+     *             is then passed to the Model, computed,
      *             and sent back to this Controller which then updates the appropriate
      *             TextView widgets.
      *
@@ -127,19 +131,24 @@ public class MainActivity extends AppCompatActivity {
     protected void computeGallons( View view )
     {
         // Update model first, then calculate
-        mRoom.setLength(Float.parseFloat(mLengthEditText.getText().toString()));
-        mRoom.setWidth(Float.parseFloat(mWidthEditText.getText().toString()));
-        mRoom.setHeight(Float.parseFloat(mHeightEditText.getText().toString()));
-        mRoom.setDoors(Integer.parseInt(mDoorsEditText.getText().toString()));
-        mRoom.setWindows(Integer.parseInt(mWindowsEditText.getText().toString()));
+        try {
+            mRoom.setLength(Float.parseFloat(mLengthEditText.getText().toString()));
+            mRoom.setWidth(Float.parseFloat(mWidthEditText.getText().toString()));
+            mRoom.setHeight(Float.parseFloat(mHeightEditText.getText().toString()));
+            mRoom.setDoors(Integer.parseInt(mDoorsEditText.getText().toString()));
+            mRoom.setWindows(Integer.parseInt(mWindowsEditText.getText().toString()));
 
-        mGallonsTextView.setText(String.format(Locale.getDefault(),"%s %s feet\n%s %.1f",
-                getString(R.string.interior_surface_area_text),
-                mRoom.totalSurfaceArea(),
-                getString(R.string.gallons_needed_text),
-                mRoom.gallonsOfPaintRequired()));
+            mGallonsTextView.setText(String.format(Locale.getDefault(),"%s %s feet\n%s %.1f",
+                    getString(R.string.interior_surface_area_text),
+                    mRoom.totalSurfaceArea(),
+                    getString(R.string.gallons_needed_text),
+                    mRoom.gallonsOfPaintRequired()));
 
-        saveSharedPreferences();
+            saveSharedPreferences();
+
+        } catch (NumberFormatException nfe) {
+            Toast.makeText(this, "All dimensions require values!", Toast.LENGTH_LONG).show();
+        }
     }
 
     /**

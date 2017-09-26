@@ -130,7 +130,18 @@ public class MainActivity extends AppCompatActivity {
      */
     protected void computeGallons( View view )
     {
-        // Update model first, then calculate
+        /* Update model first, then calculate.
+
+           The try/catch was included to prevent a state where the user could
+           tap Compute Gallons and one of the dimensions had a null value.
+           This solution was weighed against another which involved
+           setting the value to 0 if none was present.
+           I decided that forcing the user to enter a value, even 0, makes
+           more sense than just popping a zero in somewhere.  Although convenient
+           for the user, I could see that being a source of confusion.
+           Proper UX testing with non-programmers might reveal the
+           more user-friendly implementation. ;)
+         */
         try {
             mRoom.setLength(Float.parseFloat(mLengthEditText.getText().toString()));
             mRoom.setWidth(Float.parseFloat(mWidthEditText.getText().toString()));
